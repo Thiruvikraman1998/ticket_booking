@@ -56,9 +56,10 @@ class _BottomBarState extends State<BottomBar> {
                 activeIcon: Icon(FluentIcons.ticket_diagonal_16_filled),
                 label: "Ticket"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.person_2_outlined),
-                activeIcon: Icon(Icons.person_2),
-                label: "Profile"),
+              icon: Icon(Icons.person_2_outlined),
+              activeIcon: Icon(Icons.person_2),
+              label: "Profile",
+            ),
           ],
         ),
       ),
