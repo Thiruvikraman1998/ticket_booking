@@ -44,17 +44,20 @@ class _BottomBarState extends State<BottomBar> {
           elevation: 10,
           items: const [
             BottomNavigationBarItem(
-                icon: Icon(FluentIcons.home_12_regular),
-                activeIcon: Icon(FluentIcons.home_12_filled),
-                label: "Home"),
+              icon: Icon(FluentIcons.home_12_regular),
+              activeIcon: Icon(FluentIcons.home_12_filled),
+              label: "Home",
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                activeIcon: Icon(Icons.search),
-                label: "Search"),
+              icon: Icon(Icons.search),
+              activeIcon: Icon(Icons.search),
+              label: "Search",
+            ),
             BottomNavigationBarItem(
-                icon: Icon(FluentIcons.ticket_diagonal_16_regular),
-                activeIcon: Icon(FluentIcons.ticket_diagonal_16_filled),
-                label: "Ticket"),
+              icon: Icon(FluentIcons.ticket_diagonal_16_regular),
+              activeIcon: Icon(FluentIcons.ticket_diagonal_16_filled),
+              label: "Ticket",
+            ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person_2_outlined),
               activeIcon: Icon(Icons.person_2),
