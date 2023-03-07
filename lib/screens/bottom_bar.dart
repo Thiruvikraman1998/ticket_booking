@@ -36,6 +36,7 @@ class _BottomBarState extends State<BottomBar> {
         ),
         bottomNavigationBar: BottomNavigationBar(
           onTap: _onTapItem,
+          currentIndex: _selectIndex,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           selectedItemColor: Colors.blueGrey,
