@@ -52,8 +52,8 @@ class _BottomBarState extends State<BottomBar> {
                 activeIcon: Icon(Icons.search),
                 label: "Search"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.airplane_ticket_outlined),
-                activeIcon: Icon(Icons.airplane_ticket),
+                icon: Icon(FluentIcons.ticket_diagonal_16_regular),
+                activeIcon: Icon(FluentIcons.ticket_diagonal_16_filled),
                 label: "Ticket"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person_2_outlined),
