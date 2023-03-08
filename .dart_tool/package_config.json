@@ -44,6 +44,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "fluentui_icons",
+      "rootUri": "file:///Users/thiruvikrammagzter/.pub-cache/hosted/pub.dev/fluentui_icons-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "fluentui_system_icons",
       "rootUri": "file:///Users/thiruvikrammagzter/.pub-cache/hosted/pub.dev/fluentui_system_icons-1.1.190",
       "packageUri": "lib/",
@@ -158,7 +164,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-03-07T10:12:02.476577Z",
+  "generated": "2023-03-08T06:38:03.938273Z",
   "generator": "pub",
   "generatorVersion": "2.19.0"
 }
