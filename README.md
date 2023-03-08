@@ -1,6 +1,6 @@
 # ticket_booking
 
-An airplane ticket booking
+An airplane ticket booking app UI build with flutter.
 
 ## Getting Started
 
