@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
+import 'package:fluentui_icons/fluentui_icons.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);
@@ -44,23 +44,23 @@ class _BottomBarState extends State<BottomBar> {
           elevation: 10,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(FluentIcons.home_12_regular),
-              activeIcon: Icon(FluentIcons.home_12_filled),
+              icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
+              activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled),
               label: "Home",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              activeIcon: Icon(Icons.search),
+              icon: Icon(FluentSystemIcons.ic_fluent_search_regular),
+              activeIcon: Icon(FluentSystemIcons.ic_fluent_search_filled),
               label: "Search",
             ),
             BottomNavigationBarItem(
-              icon: Icon(FluentIcons.ticket_diagonal_16_regular),
-              activeIcon: Icon(FluentIcons.ticket_diagonal_16_filled),
+              icon: Icon(FluentSystemIcons.ic_fluent_ticket_regular),
+              activeIcon: Icon(FluentSystemIcons.ic_fluent_ticket_filled),
               label: "Ticket",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person_2_outlined),
-              activeIcon: Icon(Icons.person_2),
+              icon: Icon(FluentSystemIcons.ic_fluent_person_regular),
+              activeIcon: Icon(FluentSystemIcons.ic_fluent_person_filled),
               label: "Profile",
             ),
           ],
