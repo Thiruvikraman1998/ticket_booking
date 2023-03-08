@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 
+import 'home_screen.dart';
+
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);
 
@@ -11,7 +13,7 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   int _selectIndex = 0;
   static final List<Widget> _widgetsList = <Widget>[
-    const Text("Home"),
+    HomeScreen(),
     const Text("Search"),
     const Text("Tickets"),
     const Text("Profile"),
@@ -25,46 +27,41 @@ class _BottomBarState extends State<BottomBar> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Ticket App"),
-        ),
-        body: Center(
-          child: _widgetsList[_selectIndex],
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          onTap: _onTapItem,
-          currentIndex: _selectIndex,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          selectedItemColor: Colors.blueGrey,
-          unselectedItemColor: Colors.red,
-          elevation: 10,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
-              activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled),
-              label: "Home",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(FluentSystemIcons.ic_fluent_search_regular),
-              activeIcon: Icon(FluentSystemIcons.ic_fluent_search_filled),
-              label: "Search",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(FluentSystemIcons.ic_fluent_ticket_regular),
-              activeIcon: Icon(FluentSystemIcons.ic_fluent_ticket_filled),
-              label: "Ticket",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(FluentSystemIcons.ic_fluent_person_regular),
-              activeIcon: Icon(FluentSystemIcons.ic_fluent_person_filled),
-              label: "Profile",
-            ),
-          ],
-        ),
+    return Scaffold(
+      body: Center(
+        child: _widgetsList[_selectIndex],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: _onTapItem,
+        currentIndex: _selectIndex,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        selectedItemColor: Colors.blueGrey,
+        unselectedItemColor: Colors.red,
+        elevation: 10,
+        type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
+            activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(FluentSystemIcons.ic_fluent_search_regular),
+            activeIcon: Icon(FluentSystemIcons.ic_fluent_search_filled),
+            label: "Search",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(FluentSystemIcons.ic_fluent_ticket_regular),
+            activeIcon: Icon(FluentSystemIcons.ic_fluent_ticket_filled),
+            label: "Ticket",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(FluentSystemIcons.ic_fluent_person_regular),
+            activeIcon: Icon(FluentSystemIcons.ic_fluent_person_filled),
+            label: "Profile",
+          ),
+        ],
       ),
     );
   }

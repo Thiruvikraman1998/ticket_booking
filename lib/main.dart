@@ -10,7 +10,13 @@ class TicketApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const BottomBar();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Ticket App Demo",
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const BottomBar(),
+    );
   }
 }
-
