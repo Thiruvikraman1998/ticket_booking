@@ -1,4 +1,6 @@
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import '../utils/app_style.dart';
 
@@ -17,6 +19,8 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
+                  const Gap(
+                      30), // here we use Gap() instead of sizedbox, bcos for sizedBox we have to manually give height and width property, but the Gap() takes only one propery and compares it with where it has been placed, whether inside the row or column, and leaves space accordng to it.
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -27,9 +31,7 @@ class HomeScreen extends StatelessWidget {
                             "Good Morning",
                             style: Styles.headlineStyle3,
                           ),
-                          const SizedBox(
-                            height: 5,
-                          ),
+                          const Gap(5),
                           Text(
                             "Book Tickets",
                             style: Styles.headlineStyle1,
@@ -48,6 +50,27 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                  const Gap(30),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Colors.white,
+                    ),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          FluentSystemIcons.ic_fluent_search_regular,
+                          color: Colors.grey,
+                        ),
+                        Text(
+                          "Search",
+                          style: Styles.headlineStyle3,
+                        ),
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),
