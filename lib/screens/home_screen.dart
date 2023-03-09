@@ -2,6 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticket_booking/screens/search_screen.dart';
+import 'package:ticket_booking/screens/ticket_view.dart';
 
 import '../utils/app_style.dart';
 
@@ -21,7 +22,7 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const Gap(
-                      20), // here we use Gap() instead of sizedbox, bcos for sizedBox we have to manually give height and width property, but the Gap() takes only one propery and compares it with where it has been placed, whether inside the row or column, and leaves space accordng to it.
+                      30), // here we use Gap() instead of sizedbox, bcos for sizedBox we have to manually give height and width property, but the Gap() takes only one propery and compares it with where it has been placed, whether inside the row or column, and leaves space accordng to it.
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -42,8 +43,9 @@ class HomeScreen extends StatelessWidget {
                       Container(
                         height: 50,
                         width: 50,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          image: const DecorationImage(
                             fit: BoxFit.cover,
                             image: AssetImage("assets/images/img_1.png"),
                           ),
@@ -69,20 +71,27 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const Gap(30),
+                  const Gap(40),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("Upcoming Flights", style: Styles.headlineStyle2),
-                      Row(
-                        children: [
-                          Text("view all", style: Styles.headlineStyle4),
-                          const Icon(
-                            Icons.arrow_forward_ios,
-                            size: 15,
-                            color: Colors.grey,
-                          ),
-                        ],
+                      InkWell(
+                        onTap: () {
+                          print("View all tapped");
+                        },
+                        child: Row(
+                          children: [
+                            Text("view all",
+                                style: Styles.textStyle
+                                    .copyWith(color: Styles.primaryColor)),
+                            const Icon(
+                              Icons.arrow_forward_ios,
+                              size: 15,
+                              color: Color(0xFF687daf),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -90,6 +99,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
+          const Gap(15),
+          TicketView(),
         ],
       ),
     );
