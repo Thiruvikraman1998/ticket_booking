@@ -70,6 +70,20 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ],
                     ),
+                  ),
+                  const Gap(30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Upcoming Flights",
+                        style: Styles.headlineStyle2,
+                      ),
+                      Text(
+                        "view all",
+                        style: Styles.headlineStyle4,
+                      )
+                    ],
                   )
                 ],
               ),
