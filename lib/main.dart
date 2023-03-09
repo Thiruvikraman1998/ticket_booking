@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:ticket_booking/screens/bottom_bar.dart';
 
+import 'utils/app_style.dart';
+
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  ));
   runApp(const TicketApp());
 }
 
@@ -14,7 +20,7 @@ class TicketApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Ticket App Demo",
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: primary,
       ),
       home: const BottomBar(),
     );

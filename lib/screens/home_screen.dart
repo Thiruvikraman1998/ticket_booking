@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
+import '../utils/app_style.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFeeedf2),
+      backgroundColor: Styles.bgColor,
       body: ListView(
         children: [
+          //SizedBox(height: 20),
           Container(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -19,9 +22,18 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text("Good Morning"),
-                          Text("Book Tickets"),
+                        children: [
+                          Text(
+                            "Good Morning",
+                            style: Styles.headlineStyle3,
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            "Book Tickets",
+                            style: Styles.headlineStyle1,
+                          ),
                         ],
                       ),
                       Container(
