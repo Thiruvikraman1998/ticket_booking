@@ -1,6 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:ticket_booking/screens/search_screen.dart';
 
 import '../utils/app_style.dart';
 
@@ -53,17 +54,14 @@ class HomeScreen extends StatelessWidget {
                   const Gap(30),
                   Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Colors.white,
-                    ),
+                        borderRadius: BorderRadius.circular(12),
+                        color: Colors.white),
                     padding:
                         const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
                     child: Row(
                       children: [
-                        const Icon(
-                          FluentSystemIcons.ic_fluent_search_regular,
-                          color: Colors.grey,
-                        ),
+                        const Icon(FluentSystemIcons.ic_fluent_search_regular,
+                            color: Colors.grey),
                         Text(
                           "Search",
                           style: Styles.headlineStyle3,
@@ -75,16 +73,19 @@ class HomeScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "Upcoming Flights",
-                        style: Styles.headlineStyle2,
+                      Text("Upcoming Flights", style: Styles.headlineStyle2),
+                      Row(
+                        children: [
+                          Text("view all", style: Styles.headlineStyle4),
+                          const Icon(
+                            Icons.arrow_forward_ios,
+                            size: 15,
+                            color: Colors.grey,
+                          ),
+                        ],
                       ),
-                      Text(
-                        "view all",
-                        style: Styles.headlineStyle4,
-                      )
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
