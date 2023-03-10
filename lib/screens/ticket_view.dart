@@ -5,7 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticket_booking/utils/app_layout.dart';
 import 'package:ticket_booking/utils/app_style.dart';
+import 'package:ticket_booking/widgets/airplane_lines.dart';
+import 'package:ticket_booking/widgets/lines.dart';
 import 'package:ticket_booking/widgets/round_container.dart';
+import 'package:ticket_booking/widgets/semi_circle.dart';
 
 class TicketView extends StatelessWidget {
   const TicketView({super.key});
@@ -18,9 +21,11 @@ class TicketView extends StatelessWidget {
       width: size.width,
       height: 200,
       child: Container(
+        //color: Color(0xFF526799),
         margin: const EdgeInsets.only(left: 16),
         child: Column(
           children: [
+            /* The Below container is for the blue part of the ticket*/
             Container(
               decoration: const BoxDecoration(
                 color: Color(0xFF526799),
@@ -41,47 +46,7 @@ class TicketView extends StatelessWidget {
                       ),
                       const Spacer(),
                       const RoundContainer(),
-                      Expanded(
-                        child: Stack(
-                          children: [
-                            SizedBox(
-                              height: 24,
-                              child: LayoutBuilder(
-                                builder: (BuildContext context,
-                                    BoxConstraints constraints) {
-                                  return Flex(
-                                    direction: Axis.horizontal,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: List.generate(
-                                      (constraints.constrainWidth() / 8)
-                                          .floor(),
-                                      (index) => const SizedBox(
-                                        width: 4,
-                                        height: 1,
-                                        child: DecoratedBox(
-                                          decoration: BoxDecoration(
-                                              color: Colors.white),
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                },
-                              ),
-                            ),
-                            Center(
-                              child: Transform.rotate(
-                                angle: 1.5,
-                                child: const Icon(
-                                  Icons.local_airport_rounded,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
+                      const AirplaneLines(),
                       const RoundContainer(),
                       const Spacer(),
                       Text(
@@ -114,6 +79,80 @@ class TicketView extends StatelessWidget {
                       )
                     ],
                   )
+                ],
+              ),
+            ),
+            /* The below container is for red pard of the ticket.*/
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(21),
+                  bottomRight: Radius.circular(21),
+                ),
+                color: Styles.orangeColor,
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      const SemiCircle(),
+                      const Expanded(child: Lines()),
+                      Transform.rotate(
+                        angle: 3.1,
+                        child: const SemiCircle(),
+                      )
+                    ],
+                  ),
+                  const Gap(5),
+                  Container(
+                    padding:
+                        const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "1 May",
+                              style: Styles.headlineStyle3
+                                  .copyWith(color: Colors.white),
+                            ),
+                            Text(
+                              "08:00 AM",
+                              style: Styles.headlineStyle3
+                                  .copyWith(color: Colors.white),
+                            ),
+                            Text(
+                              "23",
+                              style: Styles.headlineStyle3
+                                  .copyWith(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        const Gap(5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Date",
+                              style: Styles.headlineStyle4
+                                  .copyWith(color: Colors.white),
+                            ),
+                            Text(
+                              "Departure Time",
+                              style: Styles.headlineStyle4
+                                  .copyWith(color: Colors.white),
+                            ),
+                            Text(
+                              "Seat",
+                              style: Styles.headlineStyle4
+                                  .copyWith(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),

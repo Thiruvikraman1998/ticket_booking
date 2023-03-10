@@ -45,15 +45,17 @@ class HomeScreen extends StatelessWidget {
                         width: 50,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          image: const DecorationImage(
+                          image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: AssetImage("assets/images/img_1.png"),
+                            image: Styles
+                                .planeImage, // here we added image url in a class and called it.
                           ),
                         ),
                       ),
                     ],
                   ),
                   const Gap(30),
+                  /* Below is the search bar box */
                   Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
@@ -72,6 +74,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   const Gap(40),
+                  /* Upcomming flights section */
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -100,6 +103,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const Gap(15),
+          /* Ticket view */
           TicketView(),
         ],
       ),
