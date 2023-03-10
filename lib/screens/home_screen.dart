@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:ticket_booking/screens/hotels.dart';
 import 'package:ticket_booking/screens/search_screen.dart';
 import 'package:ticket_booking/screens/ticket_view.dart';
+import 'package:ticket_booking/utils/hotel_info_list.dart';
 
 import '../utils/app_style.dart';
 
@@ -151,10 +152,9 @@ class HomeScreen extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20),
             child: Row(
-              children: const [
-                HotelsView(),
-                HotelsView(),
-              ],
+              children: hotelList
+                  .map((hotels) => HotelsView(hotels: hotels))
+                  .toList(),
             ),
           ),
         ],
