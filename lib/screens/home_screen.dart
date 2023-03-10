@@ -1,6 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:ticket_booking/screens/hotels.dart';
 import 'package:ticket_booking/screens/search_screen.dart';
 import 'package:ticket_booking/screens/ticket_view.dart';
 
@@ -22,7 +23,7 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const Gap(
-                      30), // here we use Gap() instead of sizedbox, bcos for sizedBox we have to manually give height and width property, but the Gap() takes only one propery and compares it with where it has been placed, whether inside the row or column, and leaves space accordng to it.
+                      50), // here we use Gap() instead of sizedbox, bcos for sizedBox we have to manually give height and width property, but the Gap() takes only one propery and compares it with where it has been placed, whether inside the row or column, and leaves space accordng to it.
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -104,7 +105,58 @@ class HomeScreen extends StatelessWidget {
           ),
           const Gap(15),
           /* Ticket view */
-          TicketView(),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: const [
+                TicketView(),
+                TicketView(),
+                TicketView(),
+                TicketView(),
+              ],
+            ),
+          ),
+          const Gap(5),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Hotels",
+                  style: Styles.headlineStyle1,
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Row(
+                    children: [
+                      Text(
+                        "view all",
+                        style: Styles.textStyle
+                            .copyWith(color: Styles.primaryColor),
+                      ),
+                      const Icon(
+                        Icons.arrow_forward_ios,
+                        size: 15,
+                        color: Color(0xFF687daf),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          const Gap(15),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20),
+            child: Row(
+              children: const [
+                HotelsView(),
+                HotelsView(),
+              ],
+            ),
+          ),
         ],
       ),
     );

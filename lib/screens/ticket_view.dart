@@ -18,7 +18,7 @@ class TicketView extends StatelessWidget {
     final size = AppLayout.getsize(
         context); // we are creating a class named Applayout and returning the size and width from that class which makes the code more easy to understand.
     return SizedBox(
-      width: size.width,
+      width: size.width * 0.85,
       height: 200,
       child: Container(
         //color: Color(0xFF526799),
@@ -98,44 +98,39 @@ class TicketView extends StatelessWidget {
                       const SemiCircle(),
                       const Expanded(child: Lines()),
                       Transform.rotate(
-                        angle: 3.1,
+                        angle: 3.14,
                         child: const SemiCircle(),
                       )
                     ],
                   ),
-                  const Gap(5),
+                  const Gap(10),
                   Container(
                     padding:
                         const EdgeInsets.only(left: 16, right: 16, bottom: 16),
-                    child: Column(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               "1 May",
                               style: Styles.headlineStyle3
                                   .copyWith(color: Colors.white),
                             ),
-                            Text(
-                              "08:00 AM",
-                              style: Styles.headlineStyle3
-                                  .copyWith(color: Colors.white),
-                            ),
-                            Text(
-                              "23",
-                              style: Styles.headlineStyle3
-                                  .copyWith(color: Colors.white),
-                            ),
-                          ],
-                        ),
-                        const Gap(5),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
+                            const Gap(5),
                             Text(
                               "Date",
                               style: Styles.headlineStyle4
+                                  .copyWith(color: Colors.white),
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              "08:00 AM",
+                              style: Styles.headlineStyle3
                                   .copyWith(color: Colors.white),
                             ),
                             Text(
@@ -143,8 +138,18 @@ class TicketView extends StatelessWidget {
                               style: Styles.headlineStyle4
                                   .copyWith(color: Colors.white),
                             ),
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
                             Text(
-                              "Seat",
+                              "23",
+                              style: Styles.headlineStyle3
+                                  .copyWith(color: Colors.white),
+                            ),
+                            Text(
+                              "Seat No.",
                               style: Styles.headlineStyle4
                                   .copyWith(color: Colors.white),
                             ),
@@ -162,3 +167,50 @@ class TicketView extends StatelessWidget {
     );
   }
 }
+
+
+// Column(
+//                       children: [
+//                         Row(
+//                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                           children: [
+//                             Text(
+//                               "1 May",
+//                               style: Styles.headlineStyle3
+//                                   .copyWith(color: Colors.white),
+//                             ),
+//                             Text(
+//                               "08:00 AM",
+//                               style: Styles.headlineStyle3
+//                                   .copyWith(color: Colors.white),
+//                             ),
+//                             Text(
+//                               "23",
+//                               style: Styles.headlineStyle3
+//                                   .copyWith(color: Colors.white),
+//                             ),
+//                           ],
+//                         ),
+//                         const Gap(5),
+//                         Row(
+//                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                           children: [
+//                             Text(
+//                               "Date",
+//                               style: Styles.headlineStyle4
+//                                   .copyWith(color: Colors.white),
+//                             ),
+//                             Text(
+//                               "Departure Time",
+//                               style: Styles.headlineStyle4
+//                                   .copyWith(color: Colors.white),
+//                             ),
+//                             Text(
+//                               "Seat",
+//                               style: Styles.headlineStyle4
+//                                   .copyWith(color: Colors.white),
+//                             ),
+//                           ],
+//                         ),
+//                       ],
+//                     ),
