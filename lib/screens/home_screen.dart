@@ -5,7 +5,9 @@ import 'package:ticket_booking/screens/hotels.dart';
 import 'package:ticket_booking/screens/search_screen.dart';
 import 'package:ticket_booking/screens/ticket_view.dart';
 import 'package:ticket_booking/utils/hotel_info_list.dart';
+import 'package:ticket_booking/utils/ticket_info.dart';
 
+import '../utils/app_layout.dart';
 import '../utils/app_style.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -20,11 +22,11 @@ class HomeScreen extends StatelessWidget {
           //SizedBox(height: 20),
           Container(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(20)),
               child: Column(
                 children: [
-                  const Gap(
-                      50), // here we use Gap() instead of sizedbox, bcos for sizedBox we have to manually give height and width property, but the Gap() takes only one propery and compares it with where it has been placed, whether inside the row or column, and leaves space accordng to it.
+                  Gap(AppLayout.getHeight(
+                      50)), // here we use Gap() instead of sizedbox, bcos for sizedBox we have to manually give height and width property, but the Gap() takes only one propery and compares it with where it has been placed, whether inside the row or column, and leaves space accordng to it.
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -35,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                             "Good Morning",
                             style: Styles.headlineStyle3,
                           ),
-                          const Gap(5),
+                          Gap(AppLayout.getHeight(5)),
                           Text(
                             "Book Tickets",
                             style: Styles.headlineStyle1,
@@ -43,10 +45,11 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                       Container(
-                        height: 50,
-                        width: 50,
+                        height: AppLayout.getHeight(50),
+                        width: AppLayout.getWidth(50),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius:
+                              BorderRadius.circular(AppLayout.getHeight(12)),
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: Styles
@@ -56,14 +59,16 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Gap(30),
+                  Gap(AppLayout.getHeight(30)),
                   /* Below is the search bar box */
                   Container(
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius:
+                            BorderRadius.circular(AppLayout.getHeight(12)),
                         color: Colors.white),
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: AppLayout.getWidth(5),
+                        vertical: AppLayout.getHeight(10)),
                     child: Row(
                       children: [
                         Icon(FluentSystemIcons.ic_fluent_search_regular,
@@ -75,7 +80,7 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const Gap(40),
+                  Gap(AppLayout.getHeight(40)),
                   /* Upcomming flights section */
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -104,22 +109,19 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          const Gap(15),
+          Gap(AppLayout.getHeight(15)),
           /* Ticket view */
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: const [
-                TicketView(),
-                TicketView(),
-                TicketView(),
-                TicketView(),
-              ],
+              children: ticketList
+                  .map((eachTicket) => TicketView(ticket: eachTicket))
+                  .toList(), // we use .toList() bcos its parent Row widget accepts only list.
             ),
           ),
-          const Gap(5),
+          Gap(AppLayout.getHeight(5)),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(20)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -147,14 +149,14 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          const Gap(15),
+          Gap(AppLayout.getHeight(15)),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: AppLayout.getWidth(20)),
             child: Row(
               children: hotelList
                   .map((hotels) => HotelsView(hotels: hotels))
-                  .toList(),
+                  .toList(), // we use .toList() bcos its parent Row widget accepts only list.
             ),
           ),
         ],

@@ -74,6 +74,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "get",
+      "rootUri": "file:///C:/Users/vicky/AppData/Local/Pub/Cache/hosted/pub.dev/get-4.6.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
       "name": "js",
       "rootUri": "file:///C:/Users/vicky/AppData/Local/Pub/Cache/hosted/pub.dev/js-0.6.5",
       "packageUri": "lib/",
@@ -164,7 +170,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-03-10T15:40:55.793395Z",
+  "generated": "2023-03-11T08:41:41.556208Z",
   "generator": "pub",
   "generatorVersion": "2.19.0"
 }
