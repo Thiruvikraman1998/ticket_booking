@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:ticket_booking/screens/search_screen.dart';
+import 'package:ticket_booking/screens/search_screen/search_screen.dart';
 
 import 'home_screen.dart';
 
