@@ -111,8 +111,7 @@ class TicketView extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Container(
-                          child: isSemicircle == true ? SemiCircle() : null),
+                      Container(child: SemiCircle()),
                       Expanded(
                         child: SizedBox(
                           height: 24,
@@ -144,7 +143,7 @@ class TicketView extends StatelessWidget {
                       ),
                       Transform.rotate(
                         angle: 3.14,
-                        child: isSemicircle == true ? SemiCircle() : null,
+                        child: SemiCircle(),
                       )
                     ],
                   ),
@@ -186,6 +185,7 @@ class TicketView extends StatelessWidget {
                                       ? Colors.white
                                       : Colors.black),
                             ),
+                            Gap(AppLayout.getHeight(5)),
                             Text(
                               "Departure Time",
                               style: Styles.headlineStyle4.copyWith(
@@ -205,6 +205,7 @@ class TicketView extends StatelessWidget {
                                       ? Colors.white
                                       : Colors.black),
                             ),
+                            Gap(AppLayout.getHeight(5)),
                             Text(
                               "Seat No.",
                               style: Styles.headlineStyle4.copyWith(

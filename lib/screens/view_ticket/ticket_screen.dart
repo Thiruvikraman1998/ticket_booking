@@ -76,8 +76,9 @@ class TicketScreen extends StatelessWidget {
                             child: Center(
                               child: Text(
                                 "Previous",
-                                style: Styles.headlineStyle3
-                                    .copyWith(color: Colors.black54),
+                                style: Styles.headlineStyle3.copyWith(
+                                  color: Colors.black54,
+                                ),
                               ),
                             ),
                           ),
@@ -88,16 +89,63 @@ class TicketScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Gap(AppLayout.getHeight(20)),
-            Gap(AppLayout.getHeight(20)),
-            Container(
-              child: TicketView(
-                ticket: ticketList[0],
-                isColor: true,
-                isSemicircle: null,
-                isBottomBorderRadius: null,
-              ),
-            )
+            Gap(AppLayout.getHeight(30)),
+            Column(
+              children: [
+                Container(
+                  child: TicketView(
+                    ticket: ticketList[0],
+                    isColor: true,
+                    isSemicircle: null,
+                    isBottomBorderRadius: null,
+                  ),
+                ),
+                Container(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: AppLayout.getWidth(15)),
+                  margin: EdgeInsets.symmetric(
+                    vertical: 0,
+                    horizontal: AppLayout.getWidth(16),
+                  ),
+                  decoration: BoxDecoration(color: Colors.white),
+                  child: Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Thiruvikraman J",
+                            style: Styles.headlineStyle3.copyWith(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Text(
+                            "Passenger",
+                            style: Styles.headlineStyle4,
+                          )
+                        ],
+                      ),
+                      Spacer(),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            "5221 478566",
+                            style: Styles.headlineStyle3.copyWith(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Text(
+                            "Passport",
+                            style: Styles.headlineStyle4,
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
