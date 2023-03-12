@@ -8,14 +8,9 @@ import 'package:ticket_booking/utils/app_layout.dart';
 
 import '../../utils/app_style.dart';
 
-class SearchScreen extends StatefulWidget {
+class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
 
-  @override
-  State<SearchScreen> createState() => _SearchScreenState();
-}
-
-class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     final size = AppLayout.getsize(context);

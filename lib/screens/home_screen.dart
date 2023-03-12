@@ -9,6 +9,7 @@ import 'package:ticket_booking/utils/ticket_info.dart';
 
 import '../utils/app_layout.dart';
 import '../utils/app_style.dart';
+import 'view_ticket/ticket_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -87,9 +88,7 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       Text("Upcoming Flights", style: Styles.headlineStyle2),
                       InkWell(
-                        onTap: () {
-                          print("View all tapped");
-                        },
+                        onTap: () {},
                         child: Row(
                           children: [
                             Text("view all",
