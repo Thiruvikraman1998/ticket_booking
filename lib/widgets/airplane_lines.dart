@@ -3,6 +3,8 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_booking/widgets/lines.dart';
 
+import '../utils/app_style.dart';
+
 class AirplaneLines extends StatelessWidget {
   const AirplaneLines({super.key});
 
@@ -11,13 +13,15 @@ class AirplaneLines extends StatelessWidget {
     return Expanded(
       child: Stack(
         children: [
-          const Lines(),
+          const Lines(
+            isColor: true,
+          ),
           Center(
             child: Transform.rotate(
               angle: 1.5,
-              child: const Icon(
+              child: Icon(
                 Icons.local_airport_rounded,
-                color: Colors.white,
+                color: Styles.orangeColor,
               ),
             ),
           )

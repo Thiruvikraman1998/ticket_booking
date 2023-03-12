@@ -17,14 +17,22 @@ class _ShiftWidgetsState extends State<ShiftWidgets> {
   @override
   @override
   Widget build(BuildContext context) {
-    int _selectIndex = 0;
-    final List<Widget> shiftWidgets = <Widget>[
-      AirplaneSearch(),
-      HotelSearch(),
-    ];
-    void _onTapItem(int index) {
-      _selectIndex = index;
-    }
+    // int _selectIndex = 0;
+    // final List<Widget> shiftWidgets = <Widget>[
+    //   AirplaneSearch(),
+    //   HotelSearch(),
+    // ];
+    // void _onTapItem(int index) {
+    //   _selectIndex = index;
+    // }
+
+    // Widget airPlaneTickets() {
+    //   return AirplaneSearch();
+    // }
+
+    // Widget hotelSearch() {
+    //   return HotelSearch();
+    // }
 
     final size = AppLayout.getsize(context);
     return Container(
@@ -87,7 +95,7 @@ class _ShiftWidgetsState extends State<ShiftWidgets> {
             ),
           ),
           Gap(AppLayout.getHeight(30)),
-          shiftWidgets[_selectIndex],
+          AirplaneSearch(),
         ],
       ),
     );

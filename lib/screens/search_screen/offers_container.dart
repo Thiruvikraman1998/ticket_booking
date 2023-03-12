@@ -26,7 +26,7 @@ class OffersView extends StatelessWidget {
                 AppLayout.getHeight(20),
               ),
             ),
-            width: AppLayout.getWidth(170),
+            width: size.width * .44,
             child: Column(
               children: [
                 Container(
@@ -54,7 +54,7 @@ class OffersView extends StatelessWidget {
               Stack(
                 children: [
                   Container(
-                    width: AppLayout.getWidth(170),
+                    width: size.width * .44,
                     padding: EdgeInsets.symmetric(
                       horizontal: AppLayout.getWidth(15),
                       vertical: AppLayout.getHeight(15),
@@ -97,7 +97,7 @@ class OffersView extends StatelessWidget {
               ),
               Gap(AppLayout.getHeight(10)),
               Container(
-                width: AppLayout.getWidth(170),
+                width: size.width * .44,
                 height: AppLayout.getHeight(150),
                 padding: EdgeInsets.symmetric(
                   horizontal: AppLayout.getWidth(15),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:ticket_booking/screens/search_screen/search_screen.dart';
 import 'package:ticket_booking/screens/view_ticket/ticket_screen.dart';
+import 'package:ticket_booking/utils/ticket_info.dart';
 
 import 'home_screen.dart';
 

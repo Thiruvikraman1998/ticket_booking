@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../utils/app_style.dart';
+
 class Lines extends StatelessWidget {
-  const Lines({super.key});
+  final bool? isColor;
+  const Lines({super.key, this.isColor});
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +18,13 @@ class Lines extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             children: List.generate(
               ((constraints.constrainWidth() / 10).floor()),
-              (index) => const SizedBox(
+              (index) => SizedBox(
                 width: 5,
                 height: 1,
                 child: DecoratedBox(
-                  decoration: BoxDecoration(color: Colors.white),
+                  decoration: BoxDecoration(
+                      color:
+                          isColor == null ? Colors.white : Styles.orangeColor),
                 ),
               ),
             ),
