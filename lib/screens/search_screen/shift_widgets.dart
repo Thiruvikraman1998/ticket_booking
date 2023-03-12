@@ -14,12 +14,18 @@ class ShiftWidgets extends StatefulWidget {
 }
 
 class _ShiftWidgetsState extends State<ShiftWidgets> {
-  final List<Widget> shiftWidgets = <Widget>[
-    AirplaneSearch(),
-    HotelSearch(),
-  ];
+  @override
   @override
   Widget build(BuildContext context) {
+    int _selectIndex = 0;
+    final List<Widget> shiftWidgets = <Widget>[
+      AirplaneSearch(),
+      HotelSearch(),
+    ];
+    void _onTapItem(int index) {
+      _selectIndex = index;
+    }
+
     final size = AppLayout.getsize(context);
     return Container(
       child: Column(
@@ -35,41 +41,45 @@ class _ShiftWidgetsState extends State<ShiftWidgets> {
             ),
             child: Row(
               children: [
-                Container(
-                  width: size.width * 0.44,
-                  height: AppLayout.getHeight(40),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.horizontal(
-                      left: Radius.circular(
-                        AppLayout.getWidth(50),
+                GestureDetector(
+                  child: Container(
+                    width: size.width * 0.44,
+                    height: AppLayout.getHeight(40),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.horizontal(
+                        left: Radius.circular(
+                          AppLayout.getWidth(50),
+                        ),
                       ),
+                      color: Colors.white,
                     ),
-                    color: Colors.white,
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Airplane Tickets",
-                      style:
-                          Styles.headlineStyle3.copyWith(color: Colors.black54),
+                    child: Center(
+                      child: Text(
+                        "Airplane Tickets",
+                        style: Styles.headlineStyle3
+                            .copyWith(color: Colors.black54),
+                      ),
                     ),
                   ),
                 ),
-                Container(
-                  width: size.width * 0.44,
-                  height: AppLayout.getHeight(40),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.horizontal(
-                      right: Radius.circular(
-                        AppLayout.getWidth(50),
+                GestureDetector(
+                  child: Container(
+                    width: size.width * 0.44,
+                    height: AppLayout.getHeight(40),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.horizontal(
+                        right: Radius.circular(
+                          AppLayout.getWidth(50),
+                        ),
                       ),
+                      //color: Colors.white,
                     ),
-                    //color: Colors.white,
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Hotels",
-                      style:
-                          Styles.headlineStyle3.copyWith(color: Colors.black54),
+                    child: Center(
+                      child: Text(
+                        "Hotels",
+                        style: Styles.headlineStyle3
+                            .copyWith(color: Colors.black54),
+                      ),
                     ),
                   ),
                 ),
@@ -77,7 +87,7 @@ class _ShiftWidgetsState extends State<ShiftWidgets> {
             ),
           ),
           Gap(AppLayout.getHeight(30)),
-          AirplaneSearch(),
+          shiftWidgets[_selectIndex],
         ],
       ),
     );
