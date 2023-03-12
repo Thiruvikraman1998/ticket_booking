@@ -52,7 +52,6 @@ class _AirplaneSearchState extends State<AirplaneSearch> {
             onPressed: () {
               print("Tickets fund");
             },
-            // ignore: prefer_const_constructors
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF314CD3),
               fixedSize: Size(AppLayout.getWidth(400), AppLayout.getHeight(55)),
