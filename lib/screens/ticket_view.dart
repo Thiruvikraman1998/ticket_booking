@@ -32,7 +32,7 @@ class TicketView extends StatelessWidget {
       width: AppLayout.getWidth(350),
       height: isBottomMargin == true
           ? AppLayout.getHeight(200)
-          : AppLayout.getHeight(175),
+          : AppLayout.getHeight(174),
       child: Container(
         //color: Color(0xFF526799),
         margin: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(16)),

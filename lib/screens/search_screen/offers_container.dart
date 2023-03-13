@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticket_booking/utils/app_layout.dart';
 import 'package:ticket_booking/utils/app_style.dart';
+import 'package:ticket_booking/widgets/curve_style.dart';
 
 class OffersView extends StatelessWidget {
   const OffersView({super.key});
@@ -35,7 +36,8 @@ class OffersView extends StatelessWidget {
                     borderRadius:
                         BorderRadius.circular(AppLayout.getHeight(12)),
                     image: const DecorationImage(
-                        image: AssetImage("assets/images/sit.jpg"),
+                        image: NetworkImage(
+                            "https://www.nerdwallet.com/assets/blog/wp-content/uploads/2021/06/GettyImages-1150010954.jpg"),
                         fit: BoxFit.cover),
                   ),
                 ),
@@ -81,18 +83,7 @@ class OffersView extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Positioned(
-                    right: -45,
-                    top: -40,
-                    child: Container(
-                      padding: EdgeInsets.all(AppLayout.getHeight(30)),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(width: 18, color: Color(0xFF189999)),
-                        color: Colors.transparent,
-                      ),
-                    ),
-                  ),
+                  CurveStyle(),
                 ],
               ),
               Gap(AppLayout.getHeight(10)),
