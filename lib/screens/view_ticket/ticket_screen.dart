@@ -98,6 +98,7 @@ class TicketScreen extends StatelessWidget {
                     isColor: true,
                     isSemicircle: null,
                     isBottomBorderRadius: null,
+                    isBottomMargin: false,
                   ),
                 ),
                 Container(
@@ -105,9 +106,9 @@ class TicketScreen extends StatelessWidget {
                       EdgeInsets.symmetric(horizontal: AppLayout.getWidth(15)),
                   margin: EdgeInsets.symmetric(
                     vertical: 0,
-                    horizontal: AppLayout.getWidth(16),
+                    horizontal: AppLayout.getWidth(36),
                   ),
-                  decoration: BoxDecoration(color: Colors.white),
+                  decoration: const BoxDecoration(color: Colors.white),
                   child: Row(
                     children: [
                       Column(

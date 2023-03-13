@@ -15,12 +15,14 @@ class TicketView extends StatelessWidget {
   final bool? isColor;
   final bool? isSemicircle;
   final bool? isBottomBorderRadius;
+  final bool? isBottomMargin;
   const TicketView(
       {super.key,
       required this.ticket,
       this.isColor,
       this.isSemicircle = true,
-      this.isBottomBorderRadius = true});
+      this.isBottomBorderRadius = true,
+      this.isBottomMargin = true});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,9 @@ class TicketView extends StatelessWidget {
         context); // we are creating a class named Applayout and returning the size and width from that class which makes the code more easy to understand.
     return SizedBox(
       width: AppLayout.getWidth(350),
-      height: AppLayout.getHeight(200),
+      height: isBottomMargin == true
+          ? AppLayout.getHeight(200)
+          : AppLayout.getHeight(175),
       child: Container(
         //color: Color(0xFF526799),
         margin: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(16)),
