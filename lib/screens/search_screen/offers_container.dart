@@ -83,7 +83,11 @@ class OffersView extends StatelessWidget {
                       ],
                     ),
                   ),
-                  CurveStyle(),
+                  const Positioned(
+                    right: -45,
+                    top: -40,
+                    child: CurveStyle(),
+                  ),
                 ],
               ),
               Gap(AppLayout.getHeight(10)),
