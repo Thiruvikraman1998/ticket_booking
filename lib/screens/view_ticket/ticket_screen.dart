@@ -15,6 +15,7 @@ class TicketScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int index = 0;
     final size = AppLayout.getsize(context);
 
     Widget brokenLines() {
@@ -49,6 +50,7 @@ class TicketScreen extends StatelessWidget {
               horizontal: AppLayout.getWidth(20),
               vertical: AppLayout.getHeight(50)),
           children: [
+            Gap(AppLayout.getHeight(40)),
             Text(
               "Tickets",
               style: Styles.headlineStyle1,
@@ -291,9 +293,14 @@ class TicketScreen extends StatelessWidget {
               ),
             ),
             Gap(AppLayout.getHeight(30)),
-            TicketView(
-              ticket: ticketList[1],
-              isBottomMargin: false,
+            // TicketView(
+            //   ticket: ticketList[1],
+            //   isBottomMargin: false,
+            // ),
+            Column(
+              children: [
+                TicketView(ticket: ticketList[1]),
+              ],
             ),
           ],
         ),
