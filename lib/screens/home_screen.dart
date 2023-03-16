@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Gap(AppLayout.getHeight(
-                      50)), // here we use Gap() instead of sizedbox, bcos for sizedBox we have to manually give height and width property, but the Gap() takes only one propery and compares it with where it has been placed, whether inside the row or column, and leaves space accordng to it.
+                      40)), // here we use Gap() instead of sizedbox, bcos for sizedBox we have to manually give height and width property, but the Gap() takes only one propery and compares it with where it has been placed, whether inside the row or column, and leaves space accordng to it.
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

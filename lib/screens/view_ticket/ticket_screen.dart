@@ -7,6 +7,7 @@ import 'package:ticket_booking/utils/app_layout.dart';
 import 'package:ticket_booking/utils/app_style.dart';
 import 'package:ticket_booking/utils/ticket_info.dart';
 import 'package:barcode_widget/barcode_widget.dart';
+import 'package:ticket_booking/widgets/broken_lines.dart';
 import 'package:ticket_booking/widgets/get_qr.dart';
 
 class TicketScreen extends StatelessWidget {
@@ -18,29 +19,29 @@ class TicketScreen extends StatelessWidget {
     int index = 0;
     final size = AppLayout.getsize(context);
 
-    Widget brokenLines() {
-      return SizedBox(
-        height: 50,
-        child: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints constraints) {
-            return Flex(
-              direction: Axis.horizontal,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              mainAxisSize: MainAxisSize.max,
-              children: List.generate(
-                (constraints.constrainWidth() / 12).floor(),
-                (index) => SizedBox(
-                  height: 1,
-                  width: 5,
-                  child: DecoratedBox(
-                      decoration: BoxDecoration(color: Colors.grey.shade400)),
-                ),
-              ),
-            );
-          },
-        ),
-      );
-    }
+    // Widget brokenLines() {
+    //   return SizedBox(
+    //     height: 50,
+    //     child: LayoutBuilder(
+    //       builder: (BuildContext context, BoxConstraints constraints) {
+    //         return Flex(
+    //           direction: Axis.horizontal,
+    //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //           mainAxisSize: MainAxisSize.max,
+    //           children: List.generate(
+    //             (constraints.constrainWidth() / 12).floor(),
+    //             (index) => SizedBox(
+    //               height: 1,
+    //               width: 5,
+    //               child: DecoratedBox(
+    //                   decoration: BoxDecoration(color: Colors.grey.shade400)),
+    //             ),
+    //           ),
+    //         );
+    //       },
+    //     ),
+    //   );
+    // }
 
     return Scaffold(
       backgroundColor: Styles.bgColor,
@@ -50,7 +51,7 @@ class TicketScreen extends StatelessWidget {
               horizontal: AppLayout.getWidth(20),
               vertical: AppLayout.getHeight(50)),
           children: [
-            Gap(AppLayout.getHeight(40)),
+            Gap(AppLayout.getHeight(30)),
             Text(
               "Tickets",
               style: Styles.headlineStyle1,
@@ -183,7 +184,9 @@ class TicketScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                      brokenLines(),
+                      BrokenLines(
+                        isColor: true,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -221,7 +224,9 @@ class TicketScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      brokenLines(),
+                      BrokenLines(
+                        isColor: true,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

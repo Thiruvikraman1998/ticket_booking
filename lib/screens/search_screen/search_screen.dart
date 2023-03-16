@@ -21,7 +21,7 @@ class SearchScreen extends StatelessWidget {
             horizontal: AppLayout.getWidth(20),
             vertical: AppLayout.getWidth(30)),
         children: [
-          Gap(AppLayout.getHeight(60)),
+          Gap(AppLayout.getHeight(40)),
           Container(
             child: Text(
               "What are\n You looking for?",

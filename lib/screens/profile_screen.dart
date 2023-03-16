@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:ticket_booking/screens/profile_screen_header.dart';
 import 'package:ticket_booking/utils/app_layout.dart';
 import 'package:ticket_booking/utils/app_style.dart';
+import 'package:ticket_booking/widgets/banner_view.dart';
+import 'package:ticket_booking/widgets/broken_lines.dart';
 import 'package:ticket_booking/widgets/curve_style.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
+import 'package:ticket_booking/widgets/miles_info.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -18,195 +22,199 @@ class ProfileScreen extends StatelessWidget {
             horizontal: AppLayout.getWidth(15),
             vertical: AppLayout.getHeight(30)),
         children: [
-          Gap(AppLayout.getHeight(60)),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                height: AppLayout.getHeight(90),
-                width: AppLayout.getWidth(90),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    AppLayout.getHeight(12),
-                  ),
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: Styles.planeImage,
-                  ),
-                ),
-              ),
-              Gap(AppLayout.getWidth(10)),
-              Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Book Tickets",
-                      style: Styles.headlineStyle1,
-                    ),
-                    Gap(AppLayout.getHeight(5)),
-                    Text(
-                      "New-York",
-                      style: Styles.headlineStyle3,
-                    ),
-                    Gap(AppLayout.getHeight(5)),
-                    Container(
-                      height: AppLayout.getHeight(30),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: Colors.white),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: AppLayout.getHeight(30),
-                            width: AppLayout.getWidth(30),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                color: const Color(0xFF526799)),
-                            child: const Icon(
-                              Icons.shield,
-                              size: 20,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Text(
-                            "Premium status",
-                            style: Styles.headlineStyle3
-                                .copyWith(color: Color(0xFF526799)),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              const Spacer(),
-              InkWell(
-                child: Container(
-                  child: Text(
-                    "Edit",
-                    style: Styles.headlineStyle2
-                        .copyWith(color: Color(0xFF526799)),
-                  ),
-                ),
-              )
-            ],
-          ),
+          Gap(AppLayout.getHeight(40)),
+          const ProfileHeader(),
           Gap(AppLayout.getHeight(10)),
           Divider(
-            color: Colors.grey.shade400,
+            color: Colors.grey.shade300,
+          ),
+          Gap(AppLayout.getHeight(20)),
+          const BannerView(),
+          Gap(AppLayout.getHeight(20)),
+          Text(
+            "Accumulated miles",
+            style: Styles.headlineStyle2,
           ),
           Gap(AppLayout.getHeight(30)),
-          Stack(
-            children: [
-              Container(
-                height: AppLayout.getHeight(100),
-                width: double.infinity,
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Styles.primaryColor),
-              ),
-              const Positioned(
-                right: -45,
-                top: -40,
-                child: CurveStyle(
-                  isColor: false,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(15),
-                child: Row(
+          Container(
+            padding: EdgeInsets.only(
+                top: AppLayout.getHeight(5), bottom: AppLayout.getHeight(10)),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(18),
+            ),
+            child: Column(
+              children: [
+                Column(
                   children: [
-                    CircleAvatar(
-                      maxRadius: 30,
-                      foregroundColor: Styles.primaryColor,
-                      backgroundColor: Colors.white,
-                      child: const Icon(
-                        FluentSystemIcons.ic_fluent_lightbulb_filament_filled,
-                        size: 35,
-                      ),
-                    ),
-                    Gap(AppLayout.getWidth(3)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "You've got a new award",
-                          style: Styles.headlineStyle1
-                              .copyWith(color: Colors.white),
-                        ),
-                        Text(
-                          "You have 150 flights in a year",
-                          style: Styles.headlineStyle3
-                              .copyWith(color: Colors.white),
-                        )
-                      ],
+                    Text(
+                      "192808",
+                      style: Styles.headlineStyle1
+                          .copyWith(fontWeight: FontWeight.w500, fontSize: 50),
                     )
                   ],
                 ),
-              ),
-            ],
+                Gap(AppLayout.getHeight(15)),
+                Container(
+                  margin:
+                      EdgeInsets.symmetric(horizontal: AppLayout.getWidth(10)),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: AppLayout.getWidth(5),
+                    vertical: AppLayout.getHeight(10),
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Miles accrued",
+                            style: Styles.headlineStyle3,
+                          ),
+                          Text(
+                            "23 May 2021",
+                            style: Styles.headlineStyle3,
+                          )
+                        ],
+                      ),
+                      Gap(AppLayout.getHeight(5)),
+                      Divider(
+                        color: Colors.grey.shade300,
+                      ),
+                      Gap(AppLayout.getHeight(5)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "23 042",
+                                style: Styles.headlineStyle2
+                                    .copyWith(fontWeight: FontWeight.w400),
+                              ),
+                              Text(
+                                "Miles",
+                                style: Styles.headlineStyle3.copyWith(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                "AirLine Co",
+                                style: Styles.headlineStyle2
+                                    .copyWith(fontWeight: FontWeight.w400),
+                              ),
+                              Text(
+                                "Received from",
+                                style: Styles.headlineStyle3.copyWith(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                      //Gap(AppLayout.getHeight(3)),
+                      const BrokenLines(isColor: false),
+                      //Gap(AppLayout.getHeight(5)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "23 042",
+                                style: Styles.headlineStyle2
+                                    .copyWith(fontWeight: FontWeight.w400),
+                              ),
+                              Text(
+                                "Miles",
+                                style: Styles.headlineStyle3.copyWith(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                "AirLine Co",
+                                style: Styles.headlineStyle2
+                                    .copyWith(fontWeight: FontWeight.w400),
+                              ),
+                              Text(
+                                "Received from",
+                                style: Styles.headlineStyle3.copyWith(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                      //Gap(AppLayout.getHeight(3)),
+                      const BrokenLines(isColor: false),
+                      //Gap(AppLayout.getHeight(5)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "52 345",
+                                style: Styles.headlineStyle2
+                                    .copyWith(fontWeight: FontWeight.w400),
+                              ),
+                              Text(
+                                "Miles",
+                                style: Styles.headlineStyle3.copyWith(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                "Emirates",
+                                style: Styles.headlineStyle2
+                                    .copyWith(fontWeight: FontWeight.w400),
+                              ),
+                              Text(
+                                "Received from",
+                                style: Styles.headlineStyle3.copyWith(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Gap(AppLayout.getHeight(10)),
+                InkWell(
+                  onTap: () {},
+                  child: Text(
+                    "How to get more miles",
+                    style: Styles.headlineStyle3
+                        .copyWith(color: Styles.primaryColor),
+                  ),
+                ),
+              ],
+            ),
           )
         ],
       ),
     );
   }
 }
-
-
-// color: Colors.red,
-//                 child: Row(
-//                   crossAxisAlignment: CrossAxisAlignment.start,
-//                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                   children: [
-//                     Column(
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: [
-//                         Text(
-//                           "Book Tickets",
-//                           style: Styles.headlineStyle1,
-//                         ),
-//                         Gap(AppLayout.getHeight(5)),
-//                         Text(
-//                           "New-York",
-//                           style: Styles.headlineStyle3,
-//                         ),
-//                         Gap(AppLayout.getHeight(5)),
-//                         Container(
-//                           height: AppLayout.getHeight(30),
-//                           decoration: BoxDecoration(
-//                               borderRadius: BorderRadius.circular(30),
-//                               color: Colors.white),
-//                           child: Row(
-//                             children: [
-//                               Container(
-//                                 height: AppLayout.getHeight(30),
-//                                 width: AppLayout.getWidth(30),
-//                                 decoration: BoxDecoration(
-//                                     borderRadius: BorderRadius.circular(100),
-//                                     color: const Color(0xFF526799)),
-//                                 child: const Icon(
-//                                   Icons.shield,
-//                                   size: 20,
-//                                   color: Colors.white,
-//                                 ),
-//                               ),
-//                               Text(
-//                                 "Premium status",
-//                                 style: Styles.headlineStyle3
-//                                     .copyWith(color: Color(0xFF526799)),
-//                               ),
-//                             ],
-//                           ),
-//                         )
-//                       ],
-//                     ),
-//                     Text(
-//                       "Edit",
-//                       style: Styles.headlineStyle2
-//                           .copyWith(color: Styles.primaryColor),
-//                     ),
-//                   ],
-//                 ),
-//               ),
