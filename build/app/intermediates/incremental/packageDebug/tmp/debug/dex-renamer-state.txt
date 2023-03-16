@@ -1,4 +1,4 @@
-#Mon Mar 13 22:21:54 IST 2023
-base.0=C\:\\Users\\vicky\\ticket_booking\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Thu Mar 16 11:35:50 IST 2023
+base.0=/Users/thiruvikrammagzter/dev/ticket_booking/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
